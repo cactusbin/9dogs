@@ -1,8 +1,14 @@
 <html>
   <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet"> 
     <style>
       #bottombox {
 	  height: 955px;
+
+	  font-family: 'Manrope', sans-serif;
+	  color: #0f1a51;
       }
 
       #bottombox-contents {
@@ -21,6 +27,40 @@
 	  display: flex;
 	  flex-direction: column;
       }
+
+      #bottombox-title {
+	  font-size: 48px;
+	  font-weight: 700;
+      }
+
+      #bottombox-subtitle {
+	  font-size: 18px;
+	  font-weight: 300;
+      }
+
+      #bottombox ul {
+	   list-style-image: url('check.png');
+      }
+
+      #bottombox li {
+	  font-size: 18px;
+	  font-weight: 500;
+
+	  height: 35px;
+      }
+
+      #bottombox li p {
+	  /* TODO: aligned vertically w/ img bullet
+	  display: flex;
+	  height: 35px;
+	  margin-bottom: 10px;*/
+      }
+
+      #bottombox hr {
+	  /* TODO: too thick */
+	  width: 100%;
+	  border: 1px solid #0f1a51;
+      }
     </style>
   </head>
   <body>
@@ -35,10 +75,10 @@
 	  </p>
 	  <hr />
 	  <ul>
-	    <li>Lorem ipsum dolor sit amet</li>
-	    <li>Lorem ipsum dolor sit amet</li>
-	    <li>Lorem ipsum dolor sit amet</li>
-	    <li>Lorem ipsum dolor sit amet</li>
+	    <li><p>Lorem ipsum dolor sit amet</p></li>
+	    <li><p>Lorem ipsum dolor sit amet</p></li>
+	    <li><p>Lorem ipsum dolor sit amet</p></li>
+	    <li><p>Lorem ipsum dolor sit amet</p></li>
 	  </ul>
 	</div>
 	<div id="bottombox-right">
