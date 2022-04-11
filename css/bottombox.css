@@ -1,0 +1,57 @@
+#bottombox {
+    height: 955px;
+
+    font-family: 'Manrope', sans-serif;
+    color: #0f1a51;
+}
+
+#bottombox-contents {
+    width: 1300px;
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    align-items: center;
+}
+#bottombox-left {
+    display: flex;
+    flex-direction: column;
+
+}
+#bottombox-right {
+    display: flex;
+    flex-direction: column;
+}
+
+#bottombox-title {
+    font-size: 48px;
+    font-weight: 700;
+}
+
+#bottombox-subtitle {
+    font-size: 18px;
+    font-weight: 300;
+}
+
+#bottombox ul {
+    list-style-image: url('../img/check.png');
+}
+
+#bottombox li {
+    font-size: 18px;
+    font-weight: 500;
+
+    height: 35px;
+}
+
+#bottombox li p {
+    /* TODO: aligned vertically w/ img bullet
+	  display: flex;
+	  height: 35px;
+	  margin-bottom: 10px;*/
+}
+
+#bottombox hr {
+    /* TODO: too thick */
+    width: 100%;
+    border: 1px solid #0f1a51;
+}

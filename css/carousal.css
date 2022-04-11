@@ -1,0 +1,66 @@
+#carousal-wrapper {
+    height: 485px;
+
+    font-family: 'Manrope', sans-serif;
+    color: #0f1a51;
+
+    display: flex;
+    margin-left: 715px;
+}
+
+.carousal-content {
+    padding: 40px 40px;
+    width: 400px;
+    height: 400px;
+
+    background: white;
+
+    border-radius: 50px;
+    border: 1px solid silver;
+    margin-right: 16px;
+}
+
+.carousal-content h1 {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.carousal-content h2 {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 2;
+}
+
+.caoursal-content hr {
+
+}
+
+.carousal-pie {
+    border-radius: 50px;
+    border: 1px solid silver;
+}
+
+.carousal-button {
+    margin-top: 20px
+}
+
+.carousal-content-hidden {
+    display: none
+}
+
+#carousal-nav {
+    width: 950px;
+    margin-left: 715px;
+
+    display: flex;
+    justify-content: center;
+}
+
+#carousal-nav img {
+    cursor: pointer;
+
+    margin: 10px;
+
+    border-radius: 50px;
+    border: 1px solid silver;
+}
