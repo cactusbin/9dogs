@@ -1,6 +1,42 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+    <script>
+      var position = 0;
+      
+      $(function() {
+	  $( "#carousal-right" ).click(function() {
+	      if (position == $( ".carousal-content" ).length - 2) {
+		  position++;
+		  $( ".carousal-content" ).eq(position-1).addClass("carousal-content-hidden");
+	      } else if (position == $( ".carousal-content" ).length - 1) {
+		  $( ".carousal-content" ).eq(position).addClass("carousal-content-hidden");
+		  position = 0;
+		  $( ".carousal-content" ).eq(position).removeClass("carousal-content-hidden");
+		  $( ".carousal-content" ).eq(position+1).removeClass("carousal-content-hidden");
+	      } else {
+		  position++;
+		  $( ".carousal-content" ).eq(position-1).addClass("carousal-content-hidden");
+		  $( ".carousal-content" ).eq(position+1).removeClass("carousal-content-hidden");
+	      }
+	  });
+	  
+	  $( "#carousal-left" ).click(function() {
+	      if (position == $( ".carousal-content" ).length - 1) {
+		  position--;
+		  $( ".carousal-content" ).eq(position).removeClass("carousal-content-hidden");
+	      } else if (position > 0) {
+		  position--;
+		  $( ".carousal-content" ).eq(position).removeClass("carousal-content-hidden");
+		  $( ".carousal-content" ).eq(position+2).addClass("carousal-content-hidden");
+	      }
+	  });
+      });
+
+      
+    </script>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet"> 
@@ -50,6 +86,73 @@
 	  margin-left: 680px;
       }
 
+      #carousal-wrapper {
+	  height: 485px;
+
+	  font-family: 'Manrope', sans-serif;
+	  color: #0f1a51;
+
+	  display: flex;
+	  margin-left: 715px;
+      }
+
+      .carousal-content {
+	  padding: 40px 40px;
+	  width: 400px;
+	  height: 400px;
+
+	  background: white;
+
+	  border-radius: 50px;
+	  border: 1px solid silver;
+	  margin-right: 16px;
+      }
+
+      .carousal-content h1 {
+	  font-size: 24px;
+	  font-weight: 700;
+      }
+
+      .carousal-content h2 {
+	  font-size: 16px;
+	  font-weight: 400;
+	  line-height: 2;
+      }
+
+      .caoursal-content hr {
+
+      }
+
+      .carousal-pie {
+	  border-radius: 50px;
+	  border: 1px solid silver;
+      }
+
+      .carousal-button {
+	  margin-top: 20px
+      }
+
+      .carousal-content-hidden {
+	  display: none
+      }
+
+      #carousal-nav {
+	  width: 950px;
+	  margin-left: 715px;
+
+	  display: flex;
+	  justify-content: center;
+      }
+
+      #carousal-nav img {
+	  cursor: pointer;
+
+	  margin: 10px;
+
+	  border-radius: 50px;
+	  border: 1px solid silver;
+      }
+      
     </style>
   </head>
   <body>
@@ -62,9 +165,46 @@
 	  Lorem ipsum dolor sit amet, no icat mazim tation eam, eu odio adolescens assueverit mea. An quo eligendi copiosae. Nam hinc facilis consequat at. Timeam molestie placerat mei ad.
 	</p>
       </div>
-      <div id="middlebox-slideshow">
-	BIG OL SLIDESHOW GOES HERE!!
+      <div id="carousal-wrapper">
+	<div class="carousal-content">
+	  <img class="carousal-pie" src="pie.png" />
+	  <h1>Lorem #1 ipsum #1 dolor sit amet</h1>
+	  <hr />
+	  <h2>Lorem ipsum dolor sit amet, no icat mazim tation eam, eu odio adolescens assueverit mea. An quo eligendi copiosae. Nam hinc facilis consequat at. Timeam molestie placerat mei ad.</h2>
+	  <a href="#"><img class="carousal-button" src="button-learnmore.png" /></a>
+	</div>
+	<div class="carousal-content">
+	  <img class="carousal-pie" src="pie.png" />
+	  <h1>Lorem #2 ipsum #2 dolor sit amet</h1>
+	  <hr />
+	  <h2>Lorem ipsum dolor sit amet, no icat mazim tation eam, eu odio adolescens assueverit mea. An quo eligendi copiosae. Nam hinc facilis consequat at. Timeam molestie placerat mei ad.</h2>
+	  <a href="#"><img class="carousal-button" src="button-learnmore.png" /></a>
+	</div>
+	<div class="carousal-content carousal-content-hidden">
+	  <img class="carousal-pie" src="pie.png" />
+	  <h1>Lorem #3 ipsum #3 dolor sit amet</h1>
+	  <hr />
+	  <h2>Lorem ipsum dolor sit amet, no icat mazim tation eam, eu odio adolescens assueverit mea. An quo eligendi copiosae. Nam hinc facilis consequat at. Timeam molestie placerat mei ad.</h2>
+	  <a href="#"><img class="carousal-button" src="button-learnmore.png" /></a>
+	</div>
+	<div class="carousal-content carousal-content-hidden">
+	  <img class="carousal-pie" src="pie.png" />
+	  <h1>Lorem #4 ipsum #4 dolor sit amet</h1>
+	  <hr />
+	  <h2>Lorem ipsum dolor sit amet, no icat mazim tation eam, eu odio adolescens assueverit mea. An quo eligendi copiosae. Nam hinc facilis consequat at. Timeam molestie placerat mei ad.</h2>
+	  <a href="#"><img class="carousal-button" src="button-learnmore.png" /></a>
+	</div>
+	<div class="carousal-content carousal-content-hidden">
+	  <img class="carousal-pie" src="pie.png" />
+	  <h1>Lorem #5 ipsum #5 dolor sit amet</h1>
+	  <hr />
+	  <h2>Lorem ipsum dolor sit amet, no icat mazim tation eam, eu odio adolescens assueverit mea. An quo eligendi copiosae. Nam hinc facilis consequat at. Timeam molestie placerat mei ad.</h2>
+	  <a href="#"><img class="carousal-button" src="button-learnmore.png" /></a>
+	</div>
       </div>
-    </div>
+      <div id="carousal-nav">
+	<img src="carousal-left.png" id="carousal-left" />
+	<img src="carousal-right.png" id="carousal-right" />
+      </div>
   </body>
 </html>
